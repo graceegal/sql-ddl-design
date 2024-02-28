@@ -1,7 +1,7 @@
--- TODO: dont need star before temp_kelvin
+
 CREATE TABLE stars (
     name TEXT PRIMARY KEY,
-    star_temp_kelvin INT NOT NULL
+    temp_kelvin INT NOT NULL
 );
 
 CREATE TABLE planets (
@@ -16,7 +16,7 @@ CREATE TABLE moons (
 );
 
 
-INSERT INTO stars (name, star_temp_kelvin) VALUES
+INSERT INTO stars (name, temp_kelvin) VALUES
     ('The Sun', 5800),
     ('Proxima Centauri', 3042),
     ('Gliese 876', 3192);
@@ -40,6 +40,8 @@ SELECT planets.name, planets.star_name, COUNT(moons.name)
             ON planets.name = moons.planet_name
     GROUP BY planets.name
     ORDER BY planets.name;
+
+
 
 
 
